@@ -16,7 +16,7 @@ public class TestSort
     {
         int[] a = {5, 2, 3, 4, 2};
         ISort mySort = new InsertionSort();
-        int[] result = mySort.sort(a);
-        Utils.printArray(result);
+        mySort.sort(a);
+        Utils.printArray(a);
     }
 }

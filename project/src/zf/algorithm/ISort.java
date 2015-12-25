@@ -5,5 +5,5 @@ package zf.algorithm;
  */
 public interface ISort
 {
-    public int[] sort(int[] src);
+    public void sort(int[] src);
 }

@@ -9,15 +9,12 @@ package zf.algorithm;
 public class InsertionSort implements ISort
 {
     @Override
-    public int[] sort(int[] src)
+    public void sort(int[] src)
     {
         int len = src.length;
-        if (len <= 0)
+        if (len <= 1)
         {
-            return null;
-        } else if (len == 1)
-        {
-            return src;
+            return;
         }
 
         for (int i = 1; i < len; i++)
@@ -32,7 +29,5 @@ public class InsertionSort implements ISort
                 }
             }
         }
-
-        return src;
     }
 }
