@@ -9,14 +9,20 @@ package zf.utils;
 public class Utils
 {
     /**
-     * 交换两个整数的值
+     * 打印数组
      * @param a
-     * @param b
      */
-    public static void swap(Integer a, Integer b)
-    {
-        int tmp = a;
-        a = b;
-        b = tmp;
-    }
+   public static void printArray(int[] a)
+   {
+       if (a == null)
+       {
+           return;
+       }
+
+       for (int i = 0; i < a.length; i++)
+       {
+           System.out.print(a[i] + "\t");
+       }
+       System.out.print("\n");
+   }
 }

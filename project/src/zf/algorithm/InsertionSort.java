@@ -1,14 +1,13 @@
 package zf.algorithm;
 
 /**
- * InsertionSort ²åÈëÅÅĞò
+ * InsertionSort æ’å…¥æ’åº
  *
  * @author zf
  * @date 2015/12/24 0024
  */
-public class InsertionSort implements Algorithm
+public class InsertionSort implements ISort
 {
-
     @Override
     public int[] sort(int[] src)
     {
@@ -23,19 +22,17 @@ public class InsertionSort implements Algorithm
 
         for (int i = 1; i < len; i++)
         {
-            int value = src[i];
-            int j = i - 1;
-            for ( ; j >= 0; j--)
+            for ( int j = i-1 ; j >= 0; j--)
             {
                 if (src[j + 1] < src[j])
                 {
-                    int tmp = src[j+1];
-                    src[i] = src[j+1];
+                    int tmp = src[j];
+                    src[j] = src[j+1];
                     src[j+1] = tmp;
                 }
             }
         }
 
-        return new int[0];
+        return src;
     }
 }
