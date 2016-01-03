@@ -1,14 +1,14 @@
 package zf.application;
 
 /**
- * MaxSubSum_Recursion ×ÓĞòÁĞ×î´óºÍ£¨µİ¹éÊµÏÖ£©
+ * MaxSubSum_Recursion å­åºåˆ—æœ€å¤§å’Œï¼ˆé€’å½’å®ç°ï¼‰
  *
- * °ÑÊı×é·Ö³ÉÁ½²¿·Ö£¬×ÓĞòÁĞ×î´óºÍ³öÏÖÔÚÒ»ÏÂÈıÖÖÇé¿ö£º
- * 1. Ç°°ë²¿·Ö
- * 2. ºó°ë²¿·Ö
- * 3£¬ÖĞ¼ä²¿·Ö£ºÇ°°ë²¿·Ö×î´óÖµ£¨°üÀ¨Ç°°ë²¿·ÖµÄ×îºóÒ»¸öÔªËØ£©+ºó°ë²¿·Ö×î´óÖµ£¨°üº¬ºó°ë²¿·ÖµÄµÚÒ»¸öÔªËØ£©
+ * æŠŠæ•°ç»„åˆ†æˆä¸¤éƒ¨åˆ†ï¼Œå­åºåˆ—æœ€å¤§å’Œå‡ºç°åœ¨ä¸€ä¸‹ä¸‰ç§æƒ…å†µï¼š
+ * 1. å‰åŠéƒ¨åˆ†
+ * 2. ååŠéƒ¨åˆ†
+ * 3ï¼Œä¸­é—´éƒ¨åˆ†ï¼šå‰åŠéƒ¨åˆ†æœ€å¤§å€¼ï¼ˆåŒ…æ‹¬å‰åŠéƒ¨åˆ†çš„æœ€åä¸€ä¸ªå…ƒç´ ï¼‰+ååŠéƒ¨åˆ†æœ€å¤§å€¼ï¼ˆåŒ…å«ååŠéƒ¨åˆ†çš„ç¬¬ä¸€ä¸ªå…ƒç´ ï¼‰
  *
- * Ëã·¨¸´ÔÓ¶È£º O(NlogN)
+ * ç®—æ³•å¤æ‚åº¦ï¼š O(NlogN)
  * @author zf
  * @date 2015/12/31 0031
  */
@@ -25,7 +25,7 @@ public class MaxSubSum_Recursion
     }
 
     /**
-     * µİ¹éÇó½â×î´ó
+     * é€’å½’æ±‚è§£æœ€å¤§
      * @param data
      * @param left
      * @param right
@@ -48,36 +48,36 @@ public class MaxSubSum_Recursion
         int maxRightSum = maxSumRec(data, center+1, right);
 
 
-        // ¼ÆËã×ó°ë²¿·Ö£¨°üº¬×îºóÒ»¸öÔªËØµÄ×î´óÖµ£©
+        // è®¡ç®—å·¦åŠéƒ¨åˆ†ï¼ˆåŒ…å«æœ€åä¸€ä¸ªå…ƒç´ çš„æœ€å¤§å€¼ï¼‰
         int maxLeftBorderSum = 0;
-        int leftBoderSum = 0;
+        int leftBorderSum = 0;
         for (int i = center; i >= left; i--)
         {
-            leftBoderSum += data[i];
-            if (leftBoderSum > maxLeftBorderSum)
+            leftBorderSum += data[i];
+            if (leftBorderSum > maxLeftBorderSum)
             {
-                maxLeftBorderSum = leftBoderSum;
+                maxLeftBorderSum = leftBorderSum;
             }
         }
 
-        // ¼ÆËãÓÒ°ë²¿·Ö£¨°üº¬µÚÒ»¸öÔªËØµÄ×î´óÖµ£©
+        // è®¡ç®—å³åŠéƒ¨åˆ†ï¼ˆåŒ…å«ç¬¬ä¸€ä¸ªå…ƒç´ çš„æœ€å¤§å€¼ï¼‰
         int maxRightBorderSum = 0;
-        int rightBoderSum = 0;
+        int rightBorderSum = 0;
         for (int i = center+1; i <= right; i++)
         {
-            rightBoderSum += data[i];
-            if (rightBoderSum > maxRightBorderSum)
+            rightBorderSum += data[i];
+            if (rightBorderSum > maxRightBorderSum)
             {
-                maxRightBorderSum = rightBoderSum;
+                maxRightBorderSum = rightBorderSum;
             }
         }
 
-        // ¼ÆËã×ó°ë²¿·Ö¡¢ÓÒ°ë²¿·Ö¡¢ÖĞ¼ä²¿·Ö Èı¸öÖĞµÄ×î´óÖµ
+        // è®¡ç®—å·¦åŠéƒ¨åˆ†ã€å³åŠéƒ¨åˆ†ã€ä¸­é—´éƒ¨åˆ† ä¸‰ä¸ªä¸­çš„æœ€å¤§å€¼
         return max3(maxLeftSum, maxRightSum, maxLeftBorderSum+maxRightBorderSum);
     }
 
     /**
-     * ÇóÈı¸öÊıÖĞµÄ×î´óÊı
+     * æ±‚ä¸‰ä¸ªæ•°ä¸­çš„æœ€å¤§æ•°
      * @param a
      * @param b
      * @param c
