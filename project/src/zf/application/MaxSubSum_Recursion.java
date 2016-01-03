@@ -35,7 +35,6 @@ public class MaxSubSum_Recursion
      */
     private static int maxSumRec(int[] data, int left, int right)
     {
-        System.out.println(++count);
         // base case
         if (left == right)
         {
@@ -49,6 +48,7 @@ public class MaxSubSum_Recursion
         int center = (left + right)/2;
         int maxLeftSum = maxSumRec(data, left, center);
         int maxRightSum = maxSumRec(data, center+1, right);
+
 
         // 计算左半部分（包含最后一个元素的最大值）
         int maxLeftBorderSum = 0;
@@ -67,7 +67,7 @@ public class MaxSubSum_Recursion
         int rightBoderSum = 0;
         for (int i = center+1; i <= right; i++)
         {
-            leftBoderSum += data[i];
+            rightBoderSum += data[i];
             if (rightBoderSum > maxRightBorderSum)
             {
                 maxRightBorderSum = rightBoderSum;
