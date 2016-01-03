@@ -14,8 +14,6 @@ package zf.application;
  */
 public class MaxSubSum_Recursion
 {
-    private static int count = 0;
-
     /**
      * driver method
      * @param data
