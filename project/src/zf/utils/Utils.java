@@ -9,7 +9,7 @@ package zf.utils;
 public class Utils
 {
     /**
-     * ´òÓ¡Êı×é
+     * æ‰“å°æ•°ç»„
      * @param a
      */
    public static void printArray(int[] a)
