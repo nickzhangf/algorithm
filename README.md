@@ -2,6 +2,8 @@
 算法导论学习
 ### chapter2.1-InsertionSort
 *插入排序*
+### BinarySearch
+*二分查找*
 # application
 算法应用
 ### MaxSubSum_Recursion
