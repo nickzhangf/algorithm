@@ -1,5 +1,12 @@
+# data_structure
+数据结构
+### MyLinkedList
+*双链表实现*
+
+---
+
 # algorithm
-数据结构与算法学习-Java实现
+算法
 ### chapter2.1-InsertionSort
 *插入排序*
 ### BinarySearch
